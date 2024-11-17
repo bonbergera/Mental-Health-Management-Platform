@@ -1,0 +1,298 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Assessment</title>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  
+  <style>  
+    /* Add your CSS styles here */  
+    body {  
+      font-family: Arial, sans-serif;  
+      margin: 0;  
+      padding: 0;  
+    }  
+
+    /* Header and Navigation */  
+    header {  
+      background-color: #7367f0;  
+      padding: 16px 32px;  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+      color: #ffffff;  
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+    }  
+
+    .logo {  
+      font-size: 24px;  
+      font-weight: 600;  
+    }  
+
+    nav ul {  
+      list-style-type: none;  
+      margin: 0;  
+      padding: 0;  
+      display: flex;  
+    }  
+
+    nav ul li {  
+      margin-left: 24px;  
+    }  
+
+    nav ul li a {  
+      color: #ffffff;  
+      text-decoration: none;  
+      font-size: 16px;  
+      font-weight: 500;  
+      transition: color 0.3s ease;  
+    }  
+
+    nav ul li a:hover {  
+      color: #d9d9d9;  
+    }  
+    .nav-dropdown {  
+    position: relative;  
+    display: inline-block;  
+  }  
+
+  .nav-dropdown-btn {  
+    background: none;  
+    border: none;  
+    color: white;  
+    cursor: pointer;  
+    font-size: 16px;  
+    display: flex;  
+    align-items: center;  
+    gap: 5px;  
+  }  
+
+  .nav-dropdown-content {  
+    display: none;  
+    position: absolute;  
+    background-color: white;  
+    min-width: 160px;  
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  
+    z-index: 1;  
+    right: 0;  
+    border-radius: 4px;  
+    overflow: hidden;  
+  }  
+
+  .nav-dropdown-content a {  
+    color: #333;  
+    padding: 12px 16px;  
+    text-decoration: none;  
+    display: block;  
+    transition: background-color 0.3s ease;  
+  }  
+
+  .nav-dropdown-content a:hover {  
+    background-color: #f1f1f1;  
+  }  
+
+  .nav-dropdown:hover .nav-dropdown-content {  
+    display: block;  
+  }  
+
+  .nav-dropdown:hover .nav-dropdown-btn {  
+    opacity: 0.8;  
+  }  
+
+  /* Add a small dropdown arrow */  
+  .dropdown-arrow {  
+    border-left: 4px solid transparent;  
+    border-right: 4px solid transparent;  
+    border-top: 4px solid white;  
+    margin-left: 5px;  
+  }  
+
+    .login-btn {  
+      background-color: #ffffff;  
+      color: #7367f0 !important;  
+      padding: 8px 16px;  
+      border-radius: 4px;  
+      font-weight: 500;  
+      transition: background-color 0.3s ease;  
+    }  
+
+    .login-btn:hover {  
+      background-color: #f2f2f2;  
+    }  
+
+
+    main {  
+      padding: 20px;  
+    }  
+
+    .assessment-options {  
+      display: flex;  
+      justify-content: center;  
+      margin-top: 40px;  
+    }  
+
+    .assessment-options a {  
+      background-color: #f1f1f1;  
+      border: 1px solid #ddd;  
+      border-radius: 5px;  
+      color: #333;  
+      display: block;  
+      margin: 0 20px;  
+      padding: 20px;  
+      text-align: center;  
+      text-decoration: none;  
+      width: 200px;  
+    }  
+
+    .assessment-options a:hover {  
+      background-color: #e6e6e6;  
+    }  
+
+    .assessment-options i {  
+      display: block;  
+      font-size: 30px;  
+      margin-bottom: 10px;  
+    }  
+
+    .therapist-assessment, .chatbot-assessment {  
+      display: none;  
+      margin-top: 40px;  
+    }  
+
+    .therapist-assessment form, .chatbot-assessment form {  
+      max-width: 500px;  
+      margin: 0 auto;  
+    }  
+
+    .therapist-assessment form label, .chatbot-assessment form label {  
+      display: block;  
+      margin-bottom: 10px;  
+    }  
+
+    .therapist-assessment form input, .therapist-assessment form textarea,  
+    .chatbot-assessment form input, .chatbot-assessment form textarea {  
+      border: 1px solid #ddd;  
+      border-radius: 5px;  
+      padding: 10px;  
+      width: 100%;  
+    }  
+
+    .therapist-assessment form button, .chatbot-assessment form button {  
+      background-color: #4CAF50;  
+      border: none;  
+      border-radius: 5px;  
+      color: white;  
+      cursor: pointer;  
+      padding: 10px 20px;  
+    }  
+  </style>  
+</head>  
+<body>  
+  <header>  
+    <div class="logo">  
+      <img src="logo-white.svg" alt="Health Care" style="width: 75%; height: 75%;">  
+    </div>  
+    <nav>  
+      <ul>  
+        <li><a href="Home Page.html">Home</a></li>  
+        <li><a href="Assessment.html">Assessment</a></li>  
+        <li><a href="Teletherapy.html">Teletherapy</a></li>  
+        <li><a href="Resources.html">Resources</a></li>  
+        <li><a href="Contact Us.html">Contact</a></li>  
+        
+        <!-- New Account Dropdown Menu -->  
+        <li class="nav-dropdown">  
+          <button class="nav-dropdown-btn">  
+            Account  
+            <span class="dropdown-arrow"></span>  
+          </button>  
+          <div class="nav-dropdown-content">  
+            <a href="Sign In.html">Log In</a>  
+            <a href="Sign Up.html">Sign Up</a>  
+            <a href="Profile.html">Profile</a>  
+          </div>  
+        </li>  
+      </ul>  
+    </nav>  
+  </header>  
+
+  <main>  
+    <h2>Assessment</h2>  
+    <div class="assessment-options">  
+      <a href="#" id="therapist-assessment-btn">  
+        <i class="fas fa-user-md"></i>  
+        Assess with Therapist  
+      </a>  
+      <a href="#" id="chatbot-assessment-btn">  
+        <i class="fas fa-robot"></i>  
+        Assess with Chatbot  
+      </a>  
+    </div>  
+
+    <div class="therapist-assessment" id="therapist-assessment">  
+      <form>  
+        <label for="therapist">Select Therapist:</label>  
+        <select id="therapist" name="therapist" required>  
+          <option value="">Choose a therapist</option>  
+          <option value="therapist1">Therapist 1</option>  
+          <option value="therapist2">Therapist 2</option>  
+          <option value="therapist3">Therapist 3</option>  
+        </select>  
+
+        <label for="message">Message:</label>  
+        <textarea id="message" name="message" rows="4" required></textarea>  
+
+        <button type="submit">Schedule Assessment</button>  
+      </form>  
+    </div>  
+
+    <div class="chatbot-assessment" id="chatbot-assessment">  
+      <form>  
+        <label for="message">Message:</label>  
+        <textarea id="message" name="message" rows="4" required></textarea>  
+
+        <button type="submit">Start Chatbot Assessment</button>  
+      </form>  
+    </div>  
+  </main>  
+
+  <script>  
+    // Check if the user is logged in  
+    function isLoggedIn() {  
+      // Replace this with your actual login check logic  
+      return true; // Assuming the user is logged in for now  
+    }  
+
+    // Show/hide therapist assessment form  
+    var therapistAssessmentBtn = document.getElementById("therapist-assessment-btn");  
+    var therapistAssessment = document.getElementById("therapist-assessment");  
+
+    therapistAssessmentBtn.addEventListener("click", function() {  
+      if (isLoggedIn()) {  
+        // Prefill the form with the user's information  
+        document.getElementById("therapist").value = "therapist1"; // Replace with the user's preferred therapist  
+        therapistAssessment.style.display = "block";  
+        chatbotAssessment.style.display = "none";  
+      } else {  
+        // Redirect the user to the login page  
+        window.location.href = "login.html";  
+      }  
+    });  
+
+    // Show/hide chatbot assessment form  
+    var chatbotAssessmentBtn = document.getElementById("chatbot-assessment-btn");  
+    var chatbotAssessment = document.getElementById("chatbot-assessment");  
+
+    chatbotAssessmentBtn.addEventListener("click", function() {  
+      if (isLoggedIn()) {  
+        // Prefill the form with the user's information  
+        chatbotAssessment.style.display = "block";  
+        therapistAssessment.style.display = "none";  
+      } else {  
+        // Redirect the user to the login page  
+        window.location.href = "login.html";  
+      }  
+    });  
+  </script>  
+</body>  
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Home Page</title>  
+  <link rel="preconnect" href="https://fonts.googleapis.com">  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  
+  <style>  
+    /* Global styles */  
+    body {  
+      font-family: 'Poppins', sans-serif;  
+      margin: 0;  
+      padding: 0;  
+    }  
+
+    /* Header and Navigation */  
+    header {  
+      background-color: #7367f0;  
+      padding: 16px 32px;  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+      color: #ffffff;  
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+    }  
+
+    .logo {  
+      font-size: 24px;  
+      font-weight: 600;  
+    }  
+
+    nav ul {  
+      list-style-type: none;  
+      margin: 0;  
+      padding: 0;  
+      display: flex;  
+    }  
+
+    nav ul li {  
+      margin-left: 24px;  
+    }  
+
+    nav ul li a {  
+      color: #ffffff;  
+      text-decoration: none;  
+      font-size: 16px;  
+      font-weight: 500;  
+      transition: color 0.3s ease;  
+    }  
+
+    nav ul li a:hover {  
+      color: #d9d9d9;  
+    }  
+
+    .nav-dropdown {  
+    position: relative;  
+    display: inline-block;  
+  }  
+
+  .nav-dropdown-btn {  
+    background: none;  
+    border: none;  
+    color: white;  
+    cursor: pointer;  
+    font-size: 16px;  
+    display: flex;  
+    align-items: center;  
+    gap: 5px;  
+  }  
+
+  .nav-dropdown-content {  
+    display: none;  
+    position: absolute;  
+    background-color: white;  
+    min-width: 160px;  
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  
+    z-index: 1;  
+    right: 0;  
+    border-radius: 4px;  
+    overflow: hidden;  
+  }  
+
+  .nav-dropdown-content a {  
+    color: #333;  
+    padding: 12px 16px;  
+    text-decoration: none;  
+    display: block;  
+    transition: background-color 0.3s ease;  
+  }  
+
+  .nav-dropdown-content a:hover {  
+    background-color: #f1f1f1;  
+  }  
+
+  .nav-dropdown:hover .nav-dropdown-content {  
+    display: block;  
+  }  
+
+  .nav-dropdown:hover .nav-dropdown-btn {  
+    opacity: 0.8;  
+  }  
+
+  /* Add a small dropdown arrow */  
+  .dropdown-arrow {  
+    border-left: 4px solid transparent;  
+    border-right: 4px solid transparent;  
+    border-top: 4px solid white;  
+    margin-left: 5px;  
+  }  
+
+    .login-btn {  
+      background-color: #ffffff;  
+      color: #7367f0 !important;  
+      padding: 8px 16px;  
+      border-radius: 4px;  
+      font-weight: 500;  
+      transition: background-color 0.3s ease;  
+    }  
+
+    .login-btn:hover {  
+      background-color: #f2f2f2;  
+    }  
+
+    /* Hero Section */  
+    .hero {  
+      height: 500px;  
+      background-image: url(Cover2.jpg);  
+      background-size: cover;  
+      background-position: center;  
+      display: flex;  
+      flex-direction: column;  
+      justify-content: center;  
+      align-items: center;  
+      color: #ffffff;  
+      text-align: center;  
+      padding: 0 20px;  
+    }  
+
+    .hero h1 {  
+      font-size: 48px;  
+      font-weight: 600;  
+      margin-bottom: 16px;  
+    }  
+
+    .hero p {  
+      font-size: 24px;  
+      font-weight: 400;  
+      margin-bottom: 32px;  
+    }  
+
+    .cta-btn {  
+      background-color: #7367f0;  
+      color: #ffffff;  
+      text-decoration: none;  
+      padding: 12px 24px;  
+      border-radius: 4px;  
+      font-size: 18px;  
+      font-weight: 500;  
+      transition: background-color 0.3s ease;  
+    }  
+
+    .cta-btn:hover {  
+      background-color: #6055d6;  
+    }  
+
+    /* Features Section */  
+    .features {  
+      display: flex;  
+      justify-content: center;  
+      padding: 80px 20px;  
+    }  
+
+    .feature-item {  
+      text-align: center;  
+      margin: 0 40px;  
+    }  
+
+    .feature-item i {  
+      font-size: 48px;  
+      color: #7367f0;  
+      margin-bottom: 20px;  
+    }  
+
+    .feature-item h3 {  
+      font-size: 24px;  
+      margin-bottom: 10px;  
+    }  
+
+    .feature-item p {  
+      font-size: 16px;  
+      color: #666666;  
+    }  
+
+    /* Testimonials Section */  
+    .testimonials {  
+      background-color: #f5f5f5;  
+      padding: 80px 20px;  
+      text-align: center;  
+    }  
+
+    .testimonials h2 {  
+      font-size: 36px;  
+      margin-bottom: 40px;  
+    }  
+
+    .testimonial-item {  
+      margin-bottom: 40px;  
+    }  
+
+    .testimonial-item blockquote {  
+      font-size: 20px;  
+      font-style: italic;  
+      color: #333333;  
+      margin: 0;  
+    }  
+
+    .testimonial-item cite {  
+      font-size: 16px;  
+      font-weight: 500;  
+      color: #666666;  
+      margin-top: 10px;  
+    }  
+
+    /* Footer */  
+    footer {  
+      background-color: #7367f0;  
+      color: #ffffff;  
+      padding: 40px 20px;  
+    }  
+
+    .footer-content {  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+      max-width: 1200px;  
+      margin: 0 auto;  
+    }  
+
+    .footer-content p {  
+      margin: 0;  
+      font-size: 14px;  
+    }  
+
+    .footer-content ul {  
+      list-style-type: none;  
+      margin: 0;  
+      padding: 0;  
+      display: flex;  
+    }  
+
+    .footer-content ul li {  
+      margin-left: 20px;  
+    }  
+
+    .footer-content ul li a {  
+      color: #fff;  
+      text-decoration: none;  
+    }  
+  </style>  
+</head>  
+<body>  
+  <header>  
+    <div class="logo">  
+      <img src="logo-white.svg" alt="Health Care" style="width: 75%; height: 75%;">  
+    </div>  
+    <nav>  
+      <ul>  
+        <li><a href="Home Page.html">Home</a></li>  
+        <li><a href="Assessment.html">Assessment</a></li>  
+        <li><a href="Teletherapy.html">Teletherapy</a></li>  
+        <li><a href="Resources.html">Resources</a></li>  
+        <li><a href="Contact Us.html">Contact</a></li>  
+        
+        <!-- New Account Dropdown Menu -->  
+        <li class="nav-dropdown">  
+          <button class="nav-dropdown-btn">  
+            Account  
+            <span class="dropdown-arrow"></span>  
+          </button>  
+          <div class="nav-dropdown-content">  
+            <a href="Sign In.html">Log In</a>  
+            <a href="Sign Up.html">Sign Up</a>  
+            <a href="Profile.html">Profile</a>  
+          </div>  
+        </li>  
+      </ul>  
+    </nav>  
+  </header>  
+
+  <main>  
+    <section class="hero">  
+      <h1>Take Control of Your Mental Health</h1>  
+      <p>Discover our comprehensive platform for managing your mental well-being.</p>  
+      <a href="Sign Up.html" class="cta-btn">Get Started</a>  
+    </section>  
+
+    <section class="features">  
+      <div class="feature-item">  
+        <i class="fas fa-chart-line"></i>  
+        <h3>Self-Assessment</h3>  
+        <p>Evaluate your mental health with our easy-to-use assessment tools.</p>  
+      </div>  
+      <div class="feature-item">  
+        <i class="fas fa-video"></i>  
+        <h3>Teletherapy</h3>  
+        <p>Connect with licensed therapists through secure video consultations.</p>  
+      </div>  
+      <div class="feature-item">  
+        <i class="fas fa-book-open"></i>  
+        <h3>Resource Library</h3>  
+        <p>Access a wealth of educational materials and self-help resources.</p>  
+      </div>  
+    </section>  
+
+    <section class="testimonials">  
+      <h2>What Our Users Say</h2>  
+      <div class="testimonial-item">  
+        <blockquote>  
+          <p>"This platform has been a game-changer for my mental health. The self-assessment tools and teletherapy sessions have been incredibly helpful."</p>  
+          <cite>- Joel Luhembwe</cite>  
+        </blockquote>  
+      </div>  
+      <div class="testimonial-item">  
+        <blockquote>  
+          <p>"I was hesitant at first, but the user-friendly interface and the wide range of resources have made it so much easier to manage my mental health."</p>  
+          <cite>- Demian Mapulanga</cite>  
+        </blockquote>  
+      </div>  
+    </section>  
+  </main>  
+
+  <footer>  
+    <div class="footer-content">  
+      <p>&copy; 2024 Mental Health Management Platform. All rights reserved.</p>  
+      <ul>  
+        <li><a href="#">Privacy Policy</a></li>  
+        <li><a href="#">Terms of Service</a></li>  
+        <li><a href="Contact Us.html">Contact Us</a></li>  
+      </ul>  
+    </div>  
+  </footer>  
+
+  <script src="script.js"></script>  
+</body>  
+</html>
