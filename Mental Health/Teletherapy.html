@@ -1,0 +1,389 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Teletherapy</title>  
+  <link rel="preconnect" href="https://fonts.googleapis.com">  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  
+  <style>  
+    /* Global styles */  
+    body {  
+      font-family: 'Poppins', sans-serif;  
+      margin: 0;  
+      padding: 0;  
+    }  
+
+    /* Header and Navigation */  
+    header {  
+      background-color: #7367f0;  
+      padding: 16px 32px;  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+      color: #ffffff;  
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+    }  
+
+    header .logo img {  
+      max-width: 150px;  
+    }  
+
+    header nav ul {  
+      list-style-type: none;  
+      margin: 0;  
+      padding: 0;  
+      display: flex;  
+      align-items: center;  
+    }  
+
+    header nav ul li {  
+      margin-left: 20px;  
+    }  
+
+    header nav ul li a {  
+      color: #ffffff;  
+      text-decoration: none;  
+      font-size: 16px;  
+    }  
+
+    header nav ul li a.login-btn {  
+      background-color: #5e4dcd;  
+      padding: 8px 16px;  
+      border-radius: 4px;  
+    }  
+
+    .nav-dropdown {  
+    position: relative;  
+    display: inline-block;  
+  }  
+
+  .nav-dropdown-btn {  
+    background: none;  
+    border: none;  
+    color: white;  
+    cursor: pointer;  
+    font-size: 16px;  
+    display: flex;  
+    align-items: center;  
+    gap: 5px;  
+  }  
+
+  .nav-dropdown-content {  
+    display: none;  
+    position: absolute;  
+    background-color: white;  
+    min-width: 160px;  
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  
+    z-index: 1;  
+    right: 0;  
+    border-radius: 4px;  
+    overflow: hidden;  
+  }  
+
+  .nav-dropdown-content a {  
+    color: #333;  
+    padding: 12px 16px;  
+    text-decoration: none;  
+    display: block;  
+    transition: background-color 0.3s ease;  
+  }  
+
+  .nav-dropdown-content a:hover {  
+    background-color: #f1f1f1;  
+  }  
+
+  .nav-dropdown:hover .nav-dropdown-content {  
+    display: block;  
+  }  
+
+  .nav-dropdown:hover .nav-dropdown-btn {  
+    opacity: 0.8;  
+  }  
+
+  /* Add a small dropdown arrow */  
+  .dropdown-arrow {  
+    border-left: 4px solid transparent;  
+    border-right: 4px solid transparent;  
+    border-top: 4px solid white;  
+    margin-left: 5px;  
+  }  
+
+    /* Teletherapy Section */  
+    .teletherapy {  
+      padding: 64px 32px;  
+      text-align: center;  
+    }  
+
+    .teletherapy h1 {  
+      font-size: 36px;  
+      margin-bottom: 32px;  
+    }  
+
+    .teletherapy-options {  
+      display: flex;  
+      justify-content: center;  
+      margin-bottom: 32px;  
+    }  
+
+    .teletherapy-options a {  
+      display: block;  
+      background-color: #7367f0;  
+      color: #ffffff;  
+      text-decoration: none;  
+      padding: 12px 32px;  
+      border-radius: 4px;  
+      font-size: 18px;  
+      margin: 0 16px;  
+      transition: background-color 0.3s;  
+    }  
+
+    .teletherapy-options a:hover {  
+      background-color: #5e4dcd;  
+    }  
+
+    .teletherapy-options a i {  
+      margin-right: 8px;  
+    }  
+
+    .meeting-options {  
+      display: flex;  
+      justify-content: center;  
+      margin-bottom: 32px;  
+    }  
+
+    .meeting-options label {  
+      display: block;  
+      margin: 0 16px;  
+      font-size: 18px;  
+    }  
+
+    .meeting-options input[type="radio"] {  
+      margin-right: 8px;  
+    }  
+
+    .teletherapy-form {  
+      max-width: 500px;  
+      margin: 0 auto;  
+    }  
+
+    .teletherapy-form label {  
+      display: block;  
+      text-align: left;  
+      font-size: 16px;  
+      margin-bottom: 8px;  
+    }  
+
+    .teletherapy-form input,  
+    .teletherapy-form textarea {  
+      width: 100%;  
+      padding: 12px;  
+      border: 1px solid #ddd;  
+      border-radius: 4px;  
+      font-size: 16px;  
+      margin-bottom: 16px;  
+    }  
+
+    .teletherapy-form button {  
+      display: block;  
+      background-color: #7367f0;  
+      color: #ffffff;  
+      text-decoration: none;  
+      padding: 12px 32px;  
+      border-radius: 4px;  
+      font-size: 18px;  
+      border: none;  
+      cursor: pointer;  
+      transition: background-color 0.3s;  
+    }  
+
+    .teletherapy-form button:hover {  
+      background-color: #5e4dcd;  
+    }  
+
+    /* Emergency Meeting Modal */  
+    .modal {  
+      display: none;  
+      position: fixed;  
+      z-index: 1;  
+      left: 0;  
+      top: 0;  
+      width: 100%;  
+      height: 100%;  
+      overflow: auto;  
+      background-color: rgba(0, 0, 0, 0.4);  
+    }  
+
+    .modal-content {  
+      background-color: #fefefe;  
+      margin: 15% auto;  
+      padding: 20px;  
+      border: 1px solid #888;  
+      width: 30%;  
+    }  
+
+    .close {  
+      color: #aaa;  
+      float: right;  
+      font-size: 28px;  
+      font-weight: bold;  
+    }  
+
+    .close:hover,  
+    .close:focus {  
+      color: black;  
+      text-decoration: none;  
+      cursor: pointer;  
+    }  
+
+    /* Footer */  
+    footer {  
+      background-color: #7367f0;  
+      color: #ffffff;  
+      padding: 40px 20px;  
+    }  
+
+    .footer-content {  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+      max-width: 1200px;  
+      margin: 0 auto;  
+    }  
+
+    .footer-content p {  
+      margin: 0;  
+      font-size: 14px;  
+    }  
+
+    .footer-content ul {  
+      list-style-type: none;  
+      margin: 0;  
+      padding: 0;  
+      display: flex;  
+    }  
+
+    .footer-content ul li {  
+      margin-left: 20px;  
+    }  
+
+    .footer-content ul li a {  
+      color: #fff;  
+      text-decoration: none;  
+    }  
+  </style>  
+</head>  
+<body>  
+  <header>  
+    <div class="logo">  
+      <img src="logo-white.svg" alt="Health Care" style="width: 75%; height: 75%;">  
+    </div>  
+    <nav>  
+      <ul>  
+        <li><a href="Home Page.html">Home</a></li>  
+        <li><a href="Assessment.html">Assessment</a></li>  
+        <li><a href="Teletherapy.html">Teletherapy</a></li>  
+        <li><a href="Resources.html">Resources</a></li>  
+        <li><a href="Contact Us.html">Contact</a></li>  
+        
+        <!-- New Account Dropdown Menu -->  
+        <li class="nav-dropdown">  
+          <button class="nav-dropdown-btn">  
+            Account  
+            <span class="dropdown-arrow"></span>  
+          </button>  
+          <div class="nav-dropdown-content">  
+            <a href="Sign In.html">Log In</a>  
+            <a href="Sign Up.html">Sign Up</a>  
+            <a href="Profile.html">Profile</a>  
+          </div>  
+        </li>  
+      </ul>  
+    </nav>  
+  </header>  
+
+  <main>  
+    <section class="teletherapy">  
+      <h1>Teletherapy</h1>  
+      <div class="teletherapy-options">  
+        <a href="#" id="schedule-meeting-btn"><i class="fas fa-calendar-alt"></i> Schedule Meeting</a>  
+        <a href="#" id="emergency-meeting-btn"><i class="fas fa-phone-alt"></i> Emergency Meeting</a>  
+      </div>  
+
+      <div class="meeting-options">  
+        <label><input type="radio" name="meeting-platform" value="zoom"> Zoom</label>  
+        <label><input type="radio" name="meeting-platform" value="google-meet"> Google Meet</label>  
+      </div>  
+
+      <div class="teletherapy-form" id="schedule-meeting-form">  
+        <form>  
+          <label for="name">Name:</label>  
+          <input type="text" id="name" name="name" required>  
+
+          <label for="email">Email:</label>  
+          <input type="email" id="email" name="email" required>  
+
+          <label for="date">Date:</label>  
+          <input type="date" id="date" name="date" required>  
+
+          <label for="time">Time:</label>  
+          <input type="time" id="time" name="time" required>  
+
+          <label for="message">Message:</label>  
+          <textarea id="message" name="message" rows="4" required></textarea>  
+
+          <button type="submit">Schedule Meeting</button>  
+        </form>  
+      </div>  
+
+      <div class="modal" id="emergency-meeting-modal">  
+        <div class="modal-content">  
+          <span class="close">&times;</span>  
+          <h2>Emergency Meeting</h2>  
+          <div class="meeting-options">  
+            <label><input type="radio" name="provider" value="any"> Any</label>  
+            <label><input type="radio" name="provider" value="provider1"> Provider 1</label>  
+            <label><input type="radio" name="provider" value="provider2"> Provider 2</label>  
+            <label><input type="radio" name="provider" value="provider3"> Provider 3</label>  
+          </div>  
+          <button id="schedule-emergency-meeting">Schedule Emergency Meeting</button>  
+        </div>  
+      </div>  
+    </section>  
+  </main>  
+
+  <footer>  
+    <div class="footer-content">  
+      <p>&copy; 2024 Mental Health Management Platform. All rights reserved.</p>  
+      <ul>  
+        <li><a href="#">Privacy Policy</a></li>  
+        <li><a href="#">Terms of Service</a></li>  
+        <li><a href="Contact Us.html">Contact Us</a></li>  
+      </ul>  
+    </div>  
+  </footer>  
+
+  <script>  
+    // Show/hide emergency meeting modal  
+    var emergencyMeetingBtn = document.getElementById("emergency-meeting-btn");  
+    var emergencyMeetingModal = document.getElementById("emergency-meeting-modal");  
+    var closeBtn = document.getElementsByClassName("close")[0];  
+
+    emergencyMeetingBtn.onclick = function() {  
+      emergencyMeetingModal.style.display = "block";  
+    }  
+
+    closeBtn.onclick = function() {  
+      emergencyMeetingModal.style.display = "none";  
+    }  
+
+    window.onclick = function(event) {  
+      if (event.target == emergencyMeetingModal) {  
+        emergencyMeetingModal.style.display = "none";  
+      }  
+    }  
+  </script>  
+</body>  
+</html>

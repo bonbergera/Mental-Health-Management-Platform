@@ -1,0 +1,312 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Contact Us</title>  
+  <link rel="preconnect" href="https://fonts.googleapis.com">  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">  
+  <style>  
+    /* Global styles */  
+    body {  
+      font-family: 'Poppins', sans-serif;  
+      margin: 0;  
+      padding: 0;  
+      background-color: #f5f5f5;  
+    }  
+
+    .container {  
+      max-width: 800px;  
+      margin: 0 auto;  
+      padding: 40px;  
+    }  
+
+    /* Header styles */  
+    header {  
+      background-color: #7367f0;  
+      padding: 16px 32px;  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+      color: #ffffff;  
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+    }  
+
+    .logo {  
+      font-size: 24px;  
+      font-weight: 600;  
+    }  
+
+    nav ul {  
+      list-style-type: none;  
+      margin: 0;  
+      padding: 0;  
+      display: flex;  
+    }  
+
+    nav ul li {  
+      margin-left: 24px;  
+    }  
+
+    nav ul li a {  
+      color: #ffffff;  
+      text-decoration: none;  
+      font-size: 16px;  
+      font-weight: 500;  
+      transition: color 0.3s ease;  
+    }  
+
+    nav ul li a:hover {  
+      color: #d9d9d9;  
+    }  
+
+    .nav-dropdown {  
+    position: relative;  
+    display: inline-block;  
+  }  
+
+  .nav-dropdown-btn {  
+    background: none;  
+    border: none;  
+    color: white;  
+    cursor: pointer;  
+    font-size: 16px;  
+    display: flex;  
+    align-items: center;  
+    gap: 5px;  
+  }  
+
+  .nav-dropdown-content {  
+    display: none;  
+    position: absolute;  
+    background-color: white;  
+    min-width: 160px;  
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  
+    z-index: 1;  
+    right: 0;  
+    border-radius: 4px;  
+    overflow: hidden;  
+  }  
+
+  .nav-dropdown-content a {  
+    color: #333;  
+    padding: 12px 16px;  
+    text-decoration: none;  
+    display: block;  
+    transition: background-color 0.3s ease;  
+  }  
+
+  .nav-dropdown-content a:hover {  
+    background-color: #f1f1f1;  
+  }  
+
+  .nav-dropdown:hover .nav-dropdown-content {  
+    display: block;  
+  }  
+
+  .nav-dropdown:hover .nav-dropdown-btn {  
+    opacity: 0.8;  
+  }  
+
+  /* Add a small dropdown arrow */  
+  .dropdown-arrow {  
+    border-left: 4px solid transparent;  
+    border-right: 4px solid transparent;  
+    border-top: 4px solid white;  
+    margin-left: 5px;  
+  }  
+
+    /* Contact form styles */  
+    .contact-form {  
+      background-color: #ffffff;  
+      padding: 32px;  
+      border-radius: 8px;  
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    }  
+
+    .contact-form h2 {  
+      text-align: center;  
+      margin-bottom: 24px;  
+      color: #333333;  
+    }  
+
+    .form-group {  
+      margin-bottom: 20px;  
+    }  
+
+    .form-group label {  
+      display: block;  
+      font-weight: 500;  
+      margin-bottom: 8px;  
+      color: #666666;  
+    }  
+
+    .form-group input,  
+    .form-group textarea {  
+      width: 100%;  
+      padding: 12px 16px;  
+      border: 1px solid #d9d9d9;  
+      border-radius: 4px;  
+      font-size: 16px;  
+      color: #333333;  
+    }  
+
+    .form-group textarea {  
+      resize: vertical;  
+      min-height: 120px;  
+    }  
+
+    button[type="submit"] {  
+      width: 100%;  
+      padding: 12px 0;  
+      background-color: #7367f0;  
+      border: none;  
+      border-radius: 4px;  
+      font-size: 16px;  
+      font-weight: 500;  
+      color: #ffffff;  
+      cursor: pointer;  
+      transition: background-color 0.3s ease;  
+    }  
+
+    button[type="submit"]:hover {  
+      background-color: #6055d6;  
+    }  
+    /* Footer */  
+    footer {  
+      background-color: #7367f0;  
+      color: #ffffff;  
+      padding: 40px 20px;  
+    }  
+
+    .footer-content {  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+      max-width: 1200px;  
+      margin: 0 auto;  
+    }  
+
+    .footer-content p {  
+      margin: 0;  
+      font-size: 14px;  
+    }  
+
+    .footer-content ul {  
+      list-style-type: none;  
+      margin: 0;  
+      padding: 0;  
+      display: flex;  
+    }  
+
+    .footer-content ul li {  
+      margin-left: 20px;  
+    }  
+
+    .footer-content ul li a {  
+      color: #fff;  
+      text-decoration: none;  
+    }  
+  </style>  
+</head>  
+<body>  
+  <header>  
+    <div class="logo">  
+      <img src="logo-white.svg" alt="Health Care" style="width: 75%; height: 75%;">  
+    </div>  
+    <nav>  
+      <ul>  
+        <li><a href="Home Page.html">Home</a></li>  
+        <li><a href="Assessment.html">Assessment</a></li>  
+        <li><a href="Teletherapy.html">Teletherapy</a></li>  
+        <li><a href="Resources.html">Resources</a></li>  
+        <li><a href="Contact Us.html">Contact</a></li>  
+        
+        <!-- New Account Dropdown Menu -->  
+        <li class="nav-dropdown">  
+          <button class="nav-dropdown-btn">  
+            Account  
+            <span class="dropdown-arrow"></span>  
+          </button>  
+          <div class="nav-dropdown-content">  
+            <a href="Sign In.html">Log In</a>  
+            <a href="Sign Up.html">Sign Up</a>  
+            <a href="Profile.html">Profile</a>  
+          </div>  
+        </li>  
+      </ul>  
+    </nav>  
+  </header>  
+
+  <div class="container">  
+    <div class="contact-form">  
+      <h2>Get in Touch</h2>  
+      <form id="contact-form">  
+        <div class="form-group">  
+          <label for="name">Name</label>  
+          <input type="text" id="name" name="name" required>  
+        </div>  
+        <div class="form-group">  
+          <label for="email">Email</label>  
+          <input type="email" id="email" name="email" required>  
+        </div>  
+        <div class="form-group">  
+          <label for="message">Message</label>  
+          <textarea id="message" name="message" required></textarea>  
+        </div>  
+        <button type="submit">Send Message</button>  
+      </form>  
+    </div>  
+  </div>  
+
+  <footer>  
+    <div class="footer-content">  
+      <p>&copy; 2024 Mental Health Management Platform. All rights reserved.</p>  
+      <ul>  
+        <li><a href="#">Privacy Policy</a></li>  
+        <li><a href="#">Terms of Service</a></li>  
+        <li><a href="Contact Us.html">Contact Us</a></li>  
+      </ul>  
+    </div>  
+  </footer>  
+
+  <script>  
+    const form = document.getElementById('contact-form');  
+
+    form.addEventListener('submit', async (event) => {  
+      event.preventDefault();  
+
+      const name = document.getElementById('name').value;  
+      const email = document.getElementById('email').value;  
+      const message = document.getElementById('message').value;  
+
+      try {  
+        const response = await fetch('/contact', {  
+          method: 'POST',  
+          headers: {  
+            'Content-Type': 'application/json'  
+          },  
+          body: JSON.stringify({ name, email, message })  
+        });  
+
+        const data = await response.json();  
+
+        if (response.ok) {  
+          // Display a success message to the user  
+          alert(data.message);  
+        } else {  
+          // Display an error message to the user  
+          alert(data.message);  
+        }  
+      } catch (error) {  
+        console.error('Error:', error);  
+        alert('An error occurred. Please try again later.');  
+      } finally {  
+        // Reset the form  
+        form.reset();  
+      }  
+    });  
+  </script>  
+</body>  
+</html>
